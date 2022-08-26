@@ -191,7 +191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49c7e8bbe5b19b542a3b78f9bb0dcf83, type: 2}
+  - {fileID: 2100000, guid: 2cb236cec59cc064e932c876aa0af60b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -505,7 +505,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &620762552 stripped
 Transform:
@@ -743,6 +743,12 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &1008495191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134650, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1552142933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053557596
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +816,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a10de88882d2fd343a38c41b1e5e2eba, type: 2}
+  - {fileID: 2100000, guid: 2cb236cec59cc064e932c876aa0af60b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -925,6 +931,7 @@ GameObject:
   - component: {fileID: 1310999635}
   - component: {fileID: 1310999637}
   - component: {fileID: 1310999636}
+  - component: {fileID: 1310999638}
   m_Layer: 0
   m_Name: RightHandLine
   m_TagString: Untagged
@@ -960,14 +967,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LineRendererObject: {fileID: 1310999637}
+  teachMaterial: {fileID: 2100000, guid: 41aa892cc93d2e649b3509d554c7c484, type: 2}
+  performMaterial: {fileID: 2100000, guid: a10de88882d2fd343a38c41b1e5e2eba, type: 2}
   orientation: 1
   WandPoint: {fileID: 1053557596}
-  FilePath: 
   display: {fileID: 1865479130}
+  currentInteraction: 
   interactions:
-  - A
-  - B
-  - C
+  - Wave
+  - Triangle
+  - Circle
+  trigger: 0
+  grip: 0
 --- !u!120 &1310999637
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1066,6 +1077,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &1310999638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310999634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0167d9700bccfe448b5517d18b2f9d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 1008495191}
+  IM: {fileID: 1310999636}
+  orientation: 1
 --- !u!4 &1357669300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2114446122515498511, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
@@ -1257,7 +1283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1301,6 +1327,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+--- !u!1 &1582452381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 168962, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1552142933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1601631724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601631726}
+  - component: {fileID: 1601631725}
+  m_Layer: 0
+  m_Name: Recorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1601631725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601631724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc10ddb18eb67974ba0b8a37549b8ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 1008495191}
+  leftController: {fileID: 1582452381}
+  HMD: {fileID: 1688873463}
+  rightHandLine: {fileID: 1310999634}
+  leftHandLine: {fileID: 2010259687}
+  FilePath: C:\Users\vabicheq\Documents\Repos\gesture-evaluation\recordings
+--- !u!4 &1601631726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601631724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.010602325, y: 1.0787792, z: -0.0012207846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1603818941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4471613377008970, guid: ce816f2e6abb0504092c23ed9b970dfd,
@@ -1310,6 +1392,12 @@ Transform:
 --- !u!4 &1613399774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477154, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1552142933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1688873463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100012, guid: ce816f2e6abb0504092c23ed9b970dfd,
     type: 3}
   m_PrefabInstance: {fileID: 1552142933}
   m_PrefabAsset: {fileID: 0}
@@ -1586,6 +1674,7 @@ GameObject:
   - component: {fileID: 2010259688}
   - component: {fileID: 2010259690}
   - component: {fileID: 2010259689}
+  - component: {fileID: 2010259691}
   m_Layer: 0
   m_Name: LeftHandLine
   m_TagString: Untagged
@@ -1621,11 +1710,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LineRendererObject: {fileID: 2010259690}
+  teachMaterial: {fileID: 2100000, guid: 41aa892cc93d2e649b3509d554c7c484, type: 2}
+  performMaterial: {fileID: 2100000, guid: 49c7e8bbe5b19b542a3b78f9bb0dcf83, type: 2}
   orientation: 0
   WandPoint: {fileID: 142557752}
-  FilePath: 
   display: {fileID: 1507563669}
+  currentInteraction: 
   interactions: []
+  trigger: 0
+  grip: 0
 --- !u!120 &2010259690
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1724,3 +1817,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &2010259691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010259687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0167d9700bccfe448b5517d18b2f9d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 1582452381}
+  IM: {fileID: 2010259689}
+  orientation: 0

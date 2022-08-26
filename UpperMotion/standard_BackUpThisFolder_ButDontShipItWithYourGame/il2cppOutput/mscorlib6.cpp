@@ -1064,12 +1064,14 @@ struct AppContextSwitches_t542F10E9BE2333B7BE24C8858C8A24EFA6C06D38  : public Ru
 
 struct AppContextSwitches_t542F10E9BE2333B7BE24C8858C8A24EFA6C06D38_StaticFields
 {
+	// System.Boolean System.AppContextSwitches::SetActorAsReferenceWhenCopyingClaimsIdentity
+	bool ___SetActorAsReferenceWhenCopyingClaimsIdentity_0;
 	// System.Boolean System.AppContextSwitches::EnforceJapaneseEraYearRanges
-	bool ___EnforceJapaneseEraYearRanges_0;
+	bool ___EnforceJapaneseEraYearRanges_1;
 	// System.Boolean System.AppContextSwitches::FormatJapaneseFirstYearAsANumber
-	bool ___FormatJapaneseFirstYearAsANumber_1;
+	bool ___FormatJapaneseFirstYearAsANumber_2;
 	// System.Boolean System.AppContextSwitches::EnforceLegacyJapaneseDateParsing
-	bool ___EnforceLegacyJapaneseDateParsing_2;
+	bool ___EnforceLegacyJapaneseDateParsing_3;
 };
 struct Il2CppArrayBounds;
 

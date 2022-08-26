@@ -1538,11 +1538,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MicPermissionsManager_HasMicPermission_m
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral6D2C56060B3F7353031AD314517C27945CC39748);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	{
 		// return Permission.HasUserAuthorizedPermission(Permission.Microphone);
 		bool L_0;
 		L_0 = Permission_HasUserAuthorizedPermission_mF4C90E13124E28F6F672200E489CC25A9B645B8B(_stringLiteral6D2C56060B3F7353031AD314517C27945CC39748, NULL);
-		return L_0;
+		V_0 = L_0;
+		goto IL_000e;
+	}
+
+IL_000e:
+	{
+		// }
+		bool L_1 = V_0;
+		return L_1;
 	}
 }
 // System.Void Oculus.VoiceSDK.Utilities.MicPermissionsManager::RequestMicPermission()
@@ -1591,6 +1600,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		s_Il2CppMethodInitialized = true;
 	}
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_0 = NULL;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_1 = NULL;
 	{
 		// string[] keys = new string[apps.Keys.Count];
 		il2cpp_codegen_runtime_class_init_inline(AppBuiltIns_tC1F47D2993C2AB7C0BCDDECF93AC44865AE9745E_il2cpp_TypeInfo_var);
@@ -1613,7 +1623,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		KeyCollection_CopyTo_m2DEA1FFA96F37A6F52C3D47D69E60F1B1C7E8B50(L_5, L_6, 0, KeyCollection_CopyTo_m2DEA1FFA96F37A6F52C3D47D69E60F1B1C7E8B50_RuntimeMethod_var);
 		// return keys;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_7 = V_0;
-		return L_7;
+		V_1 = L_7;
+		goto IL_002c;
+	}
+
+IL_002c:
+	{
+		// }
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_8 = V_1;
+		return L_8;
 	}
 }
 // System.Void Oculus.Voice.AppBuiltIns::.cctor()
@@ -2150,12 +2168,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_Active_m390651D97
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	int32_t G_B3_0 = 0;
 	{
 		// public override bool Active => null != voiceServiceImpl && voiceServiceImpl.Active;
 		RuntimeObject* L_0 = __this->___voiceServiceImpl_8;
 		if (!L_0)
 		{
-			goto IL_0014;
+			goto IL_0015;
 		}
 	}
 	{
@@ -2163,12 +2182,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_Active_m390651D97
 		NullCheck(L_1);
 		bool L_2;
 		L_2 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean Facebook.WitAi.IVoiceService::get_Active() */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_1);
-		return L_2;
+		G_B3_0 = ((int32_t)(L_2));
+		goto IL_0016;
 	}
 
-IL_0014:
+IL_0015:
 	{
-		return (bool)0;
+		G_B3_0 = 0;
+	}
+
+IL_0016:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // System.Boolean Oculus.Voice.AppVoiceExperience::get_IsRequestActive()
@@ -2180,12 +2205,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_IsRequestActive_m
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	int32_t G_B3_0 = 0;
 	{
 		// public override bool IsRequestActive => null != voiceServiceImpl && voiceServiceImpl.IsRequestActive;
 		RuntimeObject* L_0 = __this->___voiceServiceImpl_8;
 		if (!L_0)
 		{
-			goto IL_0014;
+			goto IL_0015;
 		}
 	}
 	{
@@ -2193,12 +2219,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_IsRequestActive_m
 		NullCheck(L_1);
 		bool L_2;
 		L_2 = InterfaceFuncInvoker0< bool >::Invoke(1 /* System.Boolean Facebook.WitAi.IVoiceService::get_IsRequestActive() */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_1);
-		return L_2;
+		G_B3_0 = ((int32_t)(L_2));
+		goto IL_0016;
 	}
 
-IL_0014:
+IL_0015:
 	{
-		return (bool)0;
+		G_B3_0 = 0;
+	}
+
+IL_0016:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // Facebook.WitAi.Interfaces.ITranscriptionProvider Oculus.Voice.AppVoiceExperience::get_TranscriptionProvider()
@@ -2246,12 +2278,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_MicActive_mD58A0B
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	int32_t G_B3_0 = 0;
 	{
 		// public override bool MicActive => null != voiceServiceImpl && voiceServiceImpl.MicActive;
 		RuntimeObject* L_0 = __this->___voiceServiceImpl_8;
 		if (!L_0)
 		{
-			goto IL_0014;
+			goto IL_0015;
 		}
 	}
 	{
@@ -2259,17 +2292,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_MicActive_mD58A0B
 		NullCheck(L_1);
 		bool L_2;
 		L_2 = InterfaceFuncInvoker0< bool >::Invoke(2 /* System.Boolean Facebook.WitAi.IVoiceService::get_MicActive() */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_1);
-		return L_2;
+		G_B3_0 = ((int32_t)(L_2));
+		goto IL_0016;
 	}
 
-IL_0014:
+IL_0015:
 	{
-		return (bool)0;
+		G_B3_0 = 0;
+	}
+
+IL_0016:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // System.Boolean Oculus.Voice.AppVoiceExperience::get_ShouldSendMicData()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_ShouldSendMicData_mC0CD3592B73CE03B2517F57D0BFDACBD5126728C (AppVoiceExperience_t73F120132FB3DCEDD1AD48085A8A8D77419E60EF* __this, const RuntimeMethod* method) 
 {
+	int32_t G_B3_0 = 0;
 	{
 		// protected override bool ShouldSendMicData => witRuntimeConfiguration.sendAudioToWit ||
 		//                                           null == TranscriptionProvider;
@@ -2278,18 +2318,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AppVoiceExperience_get_ShouldSendMicData
 		bool L_1 = L_0->___sendAudioToWit_9;
 		if (L_1)
 		{
-			goto IL_0017;
+			goto IL_0018;
 		}
 	}
 	{
 		RuntimeObject* L_2;
 		L_2 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(22 /* Facebook.WitAi.Interfaces.ITranscriptionProvider Facebook.WitAi.VoiceService::get_TranscriptionProvider() */, __this);
-		return (bool)((((RuntimeObject*)(RuntimeObject*)L_2) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
+		G_B3_0 = ((((RuntimeObject*)(RuntimeObject*)L_2) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
+		goto IL_0019;
 	}
 
-IL_0017:
+IL_0018:
 	{
-		return (bool)1;
+		G_B3_0 = 1;
+	}
+
+IL_0019:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // System.Boolean Oculus.Voice.AppVoiceExperience::get_HasPlatformIntegrations()
@@ -2466,15 +2512,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_InitVoiceSDK_m32D2920
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE0973000AFB7A33EB6108E555F37DE0D4155B187);
 		s_Il2CppMethodInitialized = true;
 	}
-	VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* V_0 = NULL;
-	Wit_t7582060C53BB0428697BD46A2E58C7A814907503* V_1 = NULL;
+	bool V_0 = false;
+	VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* V_1 = NULL;
+	bool V_2 = false;
+	Wit_t7582060C53BB0428697BD46A2E58C7A814907503* V_3 = NULL;
+	bool V_4 = false;
 	{
 		// if (HasPlatformIntegrations)
 		bool L_0;
 		L_0 = AppVoiceExperience_get_HasPlatformIntegrations_mC13C22A105847FA22FD88995434D40766EB16CC2_inline(__this, NULL);
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_009d;
+			goto IL_00ba;
 		}
 	}
 	{
@@ -2482,90 +2533,102 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_InitVoiceSDK_m32D2920
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralE0973000AFB7A33EB6108E555F37DE0D4155B187, NULL);
 		// var platformImpl = new VoiceSDKImpl(this);
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_1 = (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A*)il2cpp_codegen_object_new(VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A_il2cpp_TypeInfo_var);
-		NullCheck(L_1);
-		VoiceSDKImpl__ctor_m35A929C24F4C90801C14C885F347C2011F4F6348(L_1, __this, NULL);
-		V_0 = L_1;
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_2 = (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A*)il2cpp_codegen_object_new(VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A_il2cpp_TypeInfo_var);
+		NullCheck(L_2);
+		VoiceSDKImpl__ctor_m35A929C24F4C90801C14C885F347C2011F4F6348(L_2, __this, NULL);
+		V_1 = L_2;
 		// platformImpl.OnServiceNotAvailableEvent += () => RevertToWitUnity();
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_2 = V_0;
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_3 = L_2;
-		NullCheck(L_3);
-		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_4 = L_3->___OnServiceNotAvailableEvent_4;
-		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_5 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
-		NullCheck(L_5);
-		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_5, __this, (intptr_t)((void*)AppVoiceExperience_U3CInitVoiceSDKU3Eb__30_0_m6CE95B6153AD443639B051BCB42F77360121DA4A_RuntimeMethod_var), NULL);
-		Delegate_t* L_6;
-		L_6 = Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00(L_4, L_5, NULL);
-		NullCheck(L_3);
-		L_3->___OnServiceNotAvailableEvent_4 = ((Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)CastclassSealed((RuntimeObject*)L_6, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var));
-		Il2CppCodeGenWriteBarrier((void**)(&L_3->___OnServiceNotAvailableEvent_4), (void*)((Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)CastclassSealed((RuntimeObject*)L_6, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var)));
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_3 = V_1;
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_4 = L_3;
+		NullCheck(L_4);
+		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_5 = L_4->___OnServiceNotAvailableEvent_4;
+		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_6 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_6, __this, (intptr_t)((void*)AppVoiceExperience_U3CInitVoiceSDKU3Eb__30_0_m6CE95B6153AD443639B051BCB42F77360121DA4A_RuntimeMethod_var), NULL);
+		Delegate_t* L_7;
+		L_7 = Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00(L_5, L_6, NULL);
+		NullCheck(L_4);
+		L_4->___OnServiceNotAvailableEvent_4 = ((Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)CastclassSealed((RuntimeObject*)L_7, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var));
+		Il2CppCodeGenWriteBarrier((void**)(&L_4->___OnServiceNotAvailableEvent_4), (void*)((Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)CastclassSealed((RuntimeObject*)L_7, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var)));
 		// platformImpl.Connect();
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_7 = V_0;
-		NullCheck(L_7);
-		VirtualActionInvoker0::Invoke(4 /* System.Void Oculus.Voice.Core.Bindings.Android.BaseAndroidConnectionImpl`1<Oculus.Voice.Bindings.Android.VoiceSDKBinding>::Connect() */, L_7);
-		// platformImpl.SetRuntimeConfiguration(RuntimeConfiguration);
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_8 = V_0;
-		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_9;
-		L_9 = AppVoiceExperience_get_RuntimeConfiguration_mA230CDCD1DD79CDB5228FFB0A412EA7E43F232C0_inline(__this, NULL);
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_8 = V_1;
 		NullCheck(L_8);
-		VoiceSDKImpl_SetRuntimeConfiguration_mC0918FA50EF8775A49012EC7819253349C796ECD(L_8, L_9, NULL);
+		VirtualActionInvoker0::Invoke(4 /* System.Void Oculus.Voice.Core.Bindings.Android.BaseAndroidConnectionImpl`1<Oculus.Voice.Bindings.Android.VoiceSDKBinding>::Connect() */, L_8);
+		// platformImpl.SetRuntimeConfiguration(RuntimeConfiguration);
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_9 = V_1;
+		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_10;
+		L_10 = AppVoiceExperience_get_RuntimeConfiguration_mA230CDCD1DD79CDB5228FFB0A412EA7E43F232C0_inline(__this, NULL);
+		NullCheck(L_9);
+		VoiceSDKImpl_SetRuntimeConfiguration_mC0918FA50EF8775A49012EC7819253349C796ECD(L_9, L_10, NULL);
 		// if (platformImpl.PlatformSupportsWit)
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_10 = V_0;
-		NullCheck(L_10);
-		bool L_11;
-		L_11 = VoiceSDKImpl_get_PlatformSupportsWit_m372E01C4FEBDC063566D099A673EAFC2702A197E(L_10, NULL);
-		if (!L_11)
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_11 = V_1;
+		NullCheck(L_11);
+		bool L_12;
+		L_12 = VoiceSDKImpl_get_PlatformSupportsWit_m372E01C4FEBDC063566D099A673EAFC2702A197E(L_11, NULL);
+		V_2 = L_12;
+		bool L_13 = V_2;
+		if (!L_13)
 		{
-			goto IL_008c;
+			goto IL_00a3;
 		}
 	}
 	{
 		// voiceServiceImpl = platformImpl;
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_12 = V_0;
-		__this->___voiceServiceImpl_8 = L_12;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___voiceServiceImpl_8), (void*)L_12);
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_14 = V_1;
+		__this->___voiceServiceImpl_8 = L_14;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___voiceServiceImpl_8), (void*)L_14);
 		// if (voiceServiceImpl is Wit wit)
-		RuntimeObject* L_13 = __this->___voiceServiceImpl_8;
-		V_1 = ((Wit_t7582060C53BB0428697BD46A2E58C7A814907503*)IsInstClass((RuntimeObject*)L_13, Wit_t7582060C53BB0428697BD46A2E58C7A814907503_il2cpp_TypeInfo_var));
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_14 = V_1;
-		if (!L_14)
+		RuntimeObject* L_15 = __this->___voiceServiceImpl_8;
+		V_3 = ((Wit_t7582060C53BB0428697BD46A2E58C7A814907503*)IsInstClass((RuntimeObject*)L_15, Wit_t7582060C53BB0428697BD46A2E58C7A814907503_il2cpp_TypeInfo_var));
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_16 = V_3;
+		V_4 = (bool)((!(((RuntimeObject*)(Wit_t7582060C53BB0428697BD46A2E58C7A814907503*)L_16) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
+		bool L_17 = V_4;
+		if (!L_17)
 		{
-			goto IL_007a;
+			goto IL_008e;
 		}
 	}
 	{
 		// wit.RuntimeConfiguration = witRuntimeConfiguration;
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_15 = V_1;
-		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_16 = __this->___witRuntimeConfiguration_5;
-		NullCheck(L_15);
-		Wit_set_RuntimeConfiguration_m1A5350CFD57C6598E99C034CC77994B07952DDAA_inline(L_15, L_16, NULL);
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_18 = V_3;
+		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_19 = __this->___witRuntimeConfiguration_5;
+		NullCheck(L_18);
+		Wit_set_RuntimeConfiguration_m1A5350CFD57C6598E99C034CC77994B07952DDAA_inline(L_18, L_19, NULL);
 	}
 
-IL_007a:
+IL_008e:
 	{
 		// voiceServiceImpl.VoiceEvents = VoiceEvents;
-		RuntimeObject* L_17 = __this->___voiceServiceImpl_8;
-		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_18;
-		L_18 = VirtualFuncInvoker0< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(25 /* Facebook.WitAi.Events.VoiceEvents Facebook.WitAi.VoiceService::get_VoiceEvents() */, __this);
-		NullCheck(L_17);
-		InterfaceActionInvoker1< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(4 /* System.Void Facebook.WitAi.IVoiceService::set_VoiceEvents(Facebook.WitAi.Events.VoiceEvents) */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_17, L_18);
-		return;
+		RuntimeObject* L_20 = __this->___voiceServiceImpl_8;
+		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_21;
+		L_21 = VirtualFuncInvoker0< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(25 /* Facebook.WitAi.Events.VoiceEvents Facebook.WitAi.VoiceService::get_VoiceEvents() */, __this);
+		NullCheck(L_20);
+		InterfaceActionInvoker1< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(4 /* System.Void Facebook.WitAi.IVoiceService::set_VoiceEvents(Facebook.WitAi.Events.VoiceEvents) */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_20, L_21);
+		goto IL_00b7;
 	}
 
-IL_008c:
+IL_00a3:
 	{
 		// Debug.Log("Platform registration indicated platform support is not currently available.");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral1820E647BC43B12E095BB83CACC06DCCF7C816B9, NULL);
 		// RevertToWitUnity();
 		AppVoiceExperience_RevertToWitUnity_m346BC3947D7A11513EFB5124475AABAD5346D7C5(__this, NULL);
-		return;
 	}
 
-IL_009d:
+IL_00b7:
+	{
+		goto IL_00c3;
+	}
+
+IL_00ba:
 	{
 		// RevertToWitUnity();
 		AppVoiceExperience_RevertToWitUnity_m346BC3947D7A11513EFB5124475AABAD5346D7C5(__this, NULL);
+	}
+
+IL_00c3:
+	{
 		// }
 		return;
 	}
@@ -2585,6 +2648,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_RevertToWitUnity_m346
 	}
 	Wit_t7582060C53BB0428697BD46A2E58C7A814907503* V_0 = NULL;
 	Wit_t7582060C53BB0428697BD46A2E58C7A814907503* V_1 = NULL;
+	bool V_2 = false;
+	bool V_3 = false;
 	{
 		// Wit w = GetComponent<Wit>();
 		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_0;
@@ -2595,56 +2660,60 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_RevertToWitUnity_m346
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
 		L_2 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605((Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, L_1, NULL);
-		if (!L_2)
+		V_2 = L_2;
+		bool L_3 = V_2;
+		if (!L_3)
 		{
-			goto IL_0023;
+			goto IL_0029;
 		}
 	}
 	{
 		// w = gameObject.AddComponent<Wit>();
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3;
-		L_3 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
-		NullCheck(L_3);
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_4;
-		L_4 = GameObject_AddComponent_TisWit_t7582060C53BB0428697BD46A2E58C7A814907503_mCAA84480D202470721075085BCDAE6AE538066BB(L_3, GameObject_AddComponent_TisWit_t7582060C53BB0428697BD46A2E58C7A814907503_mCAA84480D202470721075085BCDAE6AE538066BB_RuntimeMethod_var);
-		V_0 = L_4;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
+		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
+		NullCheck(L_4);
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_5;
+		L_5 = GameObject_AddComponent_TisWit_t7582060C53BB0428697BD46A2E58C7A814907503_mCAA84480D202470721075085BCDAE6AE538066BB(L_4, GameObject_AddComponent_TisWit_t7582060C53BB0428697BD46A2E58C7A814907503_mCAA84480D202470721075085BCDAE6AE538066BB_RuntimeMethod_var);
+		V_0 = L_5;
 		// w.hideFlags = HideFlags.HideInInspector;
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_5 = V_0;
-		NullCheck(L_5);
-		Object_set_hideFlags_mACB8BFC903FB3B01BBD427753E791BF28B5E33D4(L_5, 2, NULL);
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_6 = V_0;
+		NullCheck(L_6);
+		Object_set_hideFlags_mACB8BFC903FB3B01BBD427753E791BF28B5E33D4(L_6, 2, NULL);
 	}
 
-IL_0023:
+IL_0029:
 	{
 		// voiceServiceImpl = w;
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_6 = V_0;
-		__this->___voiceServiceImpl_8 = L_6;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___voiceServiceImpl_8), (void*)L_6);
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_7 = V_0;
+		__this->___voiceServiceImpl_8 = L_7;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___voiceServiceImpl_8), (void*)L_7);
 		// if (voiceServiceImpl is Wit wit)
-		RuntimeObject* L_7 = __this->___voiceServiceImpl_8;
-		V_1 = ((Wit_t7582060C53BB0428697BD46A2E58C7A814907503*)IsInstClass((RuntimeObject*)L_7, Wit_t7582060C53BB0428697BD46A2E58C7A814907503_il2cpp_TypeInfo_var));
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_8 = V_1;
-		if (!L_8)
+		RuntimeObject* L_8 = __this->___voiceServiceImpl_8;
+		V_1 = ((Wit_t7582060C53BB0428697BD46A2E58C7A814907503*)IsInstClass((RuntimeObject*)L_8, Wit_t7582060C53BB0428697BD46A2E58C7A814907503_il2cpp_TypeInfo_var));
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_9 = V_1;
+		V_3 = (bool)((!(((RuntimeObject*)(Wit_t7582060C53BB0428697BD46A2E58C7A814907503*)L_9) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
+		bool L_10 = V_3;
+		if (!L_10)
 		{
-			goto IL_0045;
+			goto IL_0053;
 		}
 	}
 	{
 		// wit.RuntimeConfiguration = witRuntimeConfiguration;
-		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_9 = V_1;
-		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_10 = __this->___witRuntimeConfiguration_5;
-		NullCheck(L_9);
-		Wit_set_RuntimeConfiguration_m1A5350CFD57C6598E99C034CC77994B07952DDAA_inline(L_9, L_10, NULL);
+		Wit_t7582060C53BB0428697BD46A2E58C7A814907503* L_11 = V_1;
+		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_12 = __this->___witRuntimeConfiguration_5;
+		NullCheck(L_11);
+		Wit_set_RuntimeConfiguration_m1A5350CFD57C6598E99C034CC77994B07952DDAA_inline(L_11, L_12, NULL);
 	}
 
-IL_0045:
+IL_0053:
 	{
 		// voiceServiceImpl.VoiceEvents = VoiceEvents;
-		RuntimeObject* L_11 = __this->___voiceServiceImpl_8;
-		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_12;
-		L_12 = VirtualFuncInvoker0< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(25 /* Facebook.WitAi.Events.VoiceEvents Facebook.WitAi.VoiceService::get_VoiceEvents() */, __this);
-		NullCheck(L_11);
-		InterfaceActionInvoker1< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(4 /* System.Void Facebook.WitAi.IVoiceService::set_VoiceEvents(Facebook.WitAi.Events.VoiceEvents) */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_11, L_12);
+		RuntimeObject* L_13 = __this->___voiceServiceImpl_8;
+		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_14;
+		L_14 = VirtualFuncInvoker0< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(25 /* Facebook.WitAi.Events.VoiceEvents Facebook.WitAi.VoiceService::get_VoiceEvents() */, __this);
+		NullCheck(L_13);
+		InterfaceActionInvoker1< VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* >::Invoke(4 /* System.Void Facebook.WitAi.IVoiceService::set_VoiceEvents(Facebook.WitAi.Events.VoiceEvents) */, IVoiceService_t01DAFEF167D1E0F15D70823D1305A2316BBF1180_il2cpp_TypeInfo_var, L_13, L_14);
 		// }
 		return;
 	}
@@ -2658,6 +2727,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_OnEnable_mFA904DED2E6
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IPlatformVoiceService_tF80331031D071E67BDCF1AD27AFB37F433B8CD52_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	RuntimeObject* G_B5_0 = NULL;
 	RuntimeObject* G_B4_0 = NULL;
 	{
@@ -2666,44 +2736,50 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_OnEnable_mFA904DED2E6
 		// if (MicPermissionsManager.HasMicPermission())
 		bool L_0;
 		L_0 = MicPermissionsManager_HasMicPermission_m87B33F0E6CFB654B2DF0044F2541297F9454A17D(NULL);
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0015;
+			goto IL_001c;
 		}
 	}
 	{
 		// InitVoiceSDK();
 		AppVoiceExperience_InitVoiceSDK_m32D292065C10F12806D615E70A52C3DE51A623B5(__this, NULL);
-		goto IL_001a;
+		goto IL_0024;
 	}
 
-IL_0015:
+IL_001c:
 	{
 		// MicPermissionsManager.RequestMicPermission();
 		MicPermissionsManager_RequestMicPermission_m3A160569AF344AA1190A33AECBA95CA3BDD9132A(NULL);
 	}
 
-IL_001a:
+IL_0024:
 	{
 		// platformService?.SetRuntimeConfiguration(witRuntimeConfiguration);
-		RuntimeObject* L_1 = __this->___platformService_7;
-		RuntimeObject* L_2 = L_1;
-		G_B4_0 = L_2;
-		if (L_2)
+		RuntimeObject* L_2 = __this->___platformService_7;
+		RuntimeObject* L_3 = L_2;
+		G_B4_0 = L_3;
+		if (L_3)
 		{
-			G_B5_0 = L_2;
-			goto IL_0025;
+			G_B5_0 = L_3;
+			goto IL_0030;
 		}
 	}
 	{
-		return;
+		goto IL_003c;
 	}
 
-IL_0025:
+IL_0030:
 	{
-		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_3 = __this->___witRuntimeConfiguration_5;
+		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_4 = __this->___witRuntimeConfiguration_5;
 		NullCheck(G_B5_0);
-		InterfaceActionInvoker1< WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* >::Invoke(1 /* System.Void Oculus.Voice.Interfaces.IPlatformVoiceService::SetRuntimeConfiguration(Facebook.WitAi.Configuration.WitRuntimeConfiguration) */, IPlatformVoiceService_tF80331031D071E67BDCF1AD27AFB37F433B8CD52_il2cpp_TypeInfo_var, G_B5_0, L_3);
+		InterfaceActionInvoker1< WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* >::Invoke(1 /* System.Void Oculus.Voice.Interfaces.IPlatformVoiceService::SetRuntimeConfiguration(Facebook.WitAi.Configuration.WitRuntimeConfiguration) */, IPlatformVoiceService_tF80331031D071E67BDCF1AD27AFB37F433B8CD52_il2cpp_TypeInfo_var, G_B5_0, L_4);
+	}
+
+IL_003c:
+	{
 		// }
 		return;
 	}
@@ -2718,6 +2794,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_OnDisable_mDCE98C5C9A
 		s_Il2CppMethodInitialized = true;
 	}
 	VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* V_0 = NULL;
+	bool V_1 = false;
 	{
 		// base.OnDisable();
 		VoiceService_OnDisable_m55A0DD84AA15D007D6393765F6F34E7C18BCEDE3(__this, NULL);
@@ -2725,19 +2802,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_OnDisable_mDCE98C5C9A
 		RuntimeObject* L_0 = __this->___voiceServiceImpl_8;
 		V_0 = ((VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A*)IsInstClass((RuntimeObject*)L_0, VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A_il2cpp_TypeInfo_var));
 		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_1 = V_0;
-		if (!L_1)
+		V_1 = (bool)((!(((RuntimeObject*)(VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A*)L_1) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
+		bool L_2 = V_1;
+		if (!L_2)
 		{
-			goto IL_001b;
+			goto IL_0025;
 		}
 	}
 	{
 		// platformImpl.Disconnect();
-		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_2 = V_0;
-		NullCheck(L_2);
-		VirtualActionInvoker0::Invoke(5 /* System.Void Oculus.Voice.Core.Bindings.Android.BaseAndroidConnectionImpl`1<Oculus.Voice.Bindings.Android.VoiceSDKBinding>::Disconnect() */, L_2);
+		VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* L_3 = V_0;
+		NullCheck(L_3);
+		VirtualActionInvoker0::Invoke(5 /* System.Void Oculus.Voice.Core.Bindings.Android.BaseAndroidConnectionImpl`1<Oculus.Voice.Bindings.Android.VoiceSDKBinding>::Disconnect() */, L_3);
 	}
 
-IL_001b:
+IL_0025:
 	{
 		// voiceServiceImpl = null;
 		__this->___voiceServiceImpl_8 = (RuntimeObject*)NULL;
@@ -2749,29 +2828,47 @@ IL_001b:
 // System.Void Oculus.Voice.AppVoiceExperience::OnApplicationFocus(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_OnApplicationFocus_m8F49805779857F88CDCB53E78730EE1EC4DABDE9 (AppVoiceExperience_t73F120132FB3DCEDD1AD48085A8A8D77419E60EF* __this, bool ___hasFocus0, const RuntimeMethod* method) 
 {
+	bool V_0 = false;
+	bool V_1 = false;
+	int32_t G_B3_0 = 0;
 	{
 		// if (hasFocus && !Initialized)
 		bool L_0 = ___hasFocus0;
 		if (!L_0)
 		{
-			goto IL_0018;
+			goto IL_000f;
 		}
 	}
 	{
 		bool L_1;
 		L_1 = AppVoiceExperience_get_Initialized_m97ED7179C4F41C4595B0047A0EC983B5EC186DFA(__this, NULL);
-		if (L_1)
+		G_B3_0 = ((((int32_t)L_1) == ((int32_t)0))? 1 : 0);
+		goto IL_0010;
+	}
+
+IL_000f:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_0010:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_2 = V_0;
+		if (!L_2)
 		{
-			goto IL_0018;
+			goto IL_0028;
 		}
 	}
 	{
 		// if (MicPermissionsManager.HasMicPermission())
-		bool L_2;
-		L_2 = MicPermissionsManager_HasMicPermission_m87B33F0E6CFB654B2DF0044F2541297F9454A17D(NULL);
-		if (!L_2)
+		bool L_3;
+		L_3 = MicPermissionsManager_HasMicPermission_m87B33F0E6CFB654B2DF0044F2541297F9454A17D(NULL);
+		V_1 = L_3;
+		bool L_4 = V_1;
+		if (!L_4)
 		{
-			goto IL_0018;
+			goto IL_0027;
 		}
 	}
 	{
@@ -2779,7 +2876,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppVoiceExperience_OnApplicationFocus_m8
 		AppVoiceExperience_InitVoiceSDK_m32D292065C10F12806D615E70A52C3DE51A623B5(__this, NULL);
 	}
 
-IL_0018:
+IL_0027:
+	{
+	}
+
+IL_0028:
 	{
 		// }
 		return;
@@ -3240,6 +3341,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		s_Il2CppMethodInitialized = true;
 	}
 	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_0 = NULL;
+	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_1 = NULL;
+	AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* V_2 = NULL;
 	{
 		// AndroidJavaObject witConfig =
 		//     new AndroidJavaObject("com.oculus.assistant.api.voicesdk.immersivevoicecommands.WitConfiguration");
@@ -3264,13 +3367,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_7 = (AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0*)il2cpp_codegen_object_new(AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_il2cpp_TypeInfo_var);
 		NullCheck(L_7);
 		AndroidJavaObject__ctor_m5A65B5D325C2CEFAC4097A0D3813F8E158178DD7(L_7, _stringLiteralAC73D661602F46A092AF190767F8E68241BB314F, L_6, NULL);
+		V_1 = L_7;
 		// witRuntimeConfig.Set("witConfiguration", witConfig);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_8 = L_7;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_8 = V_1;
 		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_9 = V_0;
 		NullCheck(L_8);
 		AndroidJavaObject_Set_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_mB31B4CD1FC5DFAABED4F3B6287A47C6A062C4BB2(L_8, _stringLiteral0C8E84E39D0E62D31544DE3953FDF92C5BAB60EB, L_9, AndroidJavaObject_Set_TisAndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0_mB31B4CD1FC5DFAABED4F3B6287A47C6A062C4BB2_RuntimeMethod_var);
 		// witRuntimeConfig.Set("minKeepAliveVolume", configuration.minKeepAliveVolume);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_10 = L_8;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_10 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_11 = __this->___configuration_0;
 		NullCheck(L_11);
 		float L_12 = L_11->___minKeepAliveVolume_1;
@@ -3278,7 +3382,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_10, _stringLiteral60DB2D6C7D1E32BCBAC4811B3E7978364FFC0102, L_12, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// witRuntimeConfig.Set("minKeepAliveTimeInSeconds",
 		//     configuration.minKeepAliveTimeInSeconds);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_13 = L_10;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_13 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_14 = __this->___configuration_0;
 		NullCheck(L_14);
 		float L_15 = L_14->___minKeepAliveTimeInSeconds_2;
@@ -3286,7 +3390,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_13, _stringLiteral58AE457A2E7C031E4E4EADC82BC37330A84838AD, L_15, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// witRuntimeConfig.Set("minTranscriptionKeepAliveTimeInSeconds",
 		//     configuration.minTranscriptionKeepAliveTimeInSeconds);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_16 = L_13;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_16 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_17 = __this->___configuration_0;
 		NullCheck(L_17);
 		float L_18 = L_17->___minTranscriptionKeepAliveTimeInSeconds_3;
@@ -3294,7 +3398,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_16, _stringLiteralF5F89232B0CDE6B0E7076884EA8579F8F38D88C1, L_18, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// witRuntimeConfig.Set("maxRecordingTime",
 		//     configuration.maxRecordingTime);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_19 = L_16;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_19 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_20 = __this->___configuration_0;
 		NullCheck(L_20);
 		float L_21 = L_20->___maxRecordingTime_4;
@@ -3302,7 +3406,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_19, _stringLiteralDD4104677145B876F292A0DE0E3D05E4D6B15066, L_21, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// witRuntimeConfig.Set("soundWakeThreshold",
 		//     configuration.soundWakeThreshold);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_22 = L_19;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_22 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_23 = __this->___configuration_0;
 		NullCheck(L_23);
 		float L_24 = L_23->___soundWakeThreshold_5;
@@ -3310,7 +3414,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_22, _stringLiteral90299BFCD00E6E29A61209F375686A81B96665F6, L_24, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// witRuntimeConfig.Set("sampleLengthInMs",
 		//     configuration.sampleLengthInMs);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_25 = L_22;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_25 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_26 = __this->___configuration_0;
 		NullCheck(L_26);
 		int32_t L_27 = L_26->___sampleLengthInMs_6;
@@ -3318,7 +3422,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m4BE09BF2FD0695C38B40120A43296C6808B0F31F(L_25, _stringLiteral52BB1AD0DD3A85E7F05A9AEA98E0EEB98B478F6D, L_27, AndroidJavaObject_Set_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m4BE09BF2FD0695C38B40120A43296C6808B0F31F_RuntimeMethod_var);
 		// witRuntimeConfig.Set("micBufferLengthInSeconds",
 		//     configuration.micBufferLengthInSeconds);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_28 = L_25;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_28 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_29 = __this->___configuration_0;
 		NullCheck(L_29);
 		float L_30 = L_29->___micBufferLengthInSeconds_7;
@@ -3326,7 +3430,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_28, _stringLiteralA0C6FF001ADF1824C2B6266A303671C2386842C6, L_30, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// witRuntimeConfig.Set("sendAudioToWit",
 		//     configuration.sendAudioToWit);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_31 = L_28;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_31 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_32 = __this->___configuration_0;
 		NullCheck(L_32);
 		bool L_33 = L_32->___sendAudioToWit_9;
@@ -3334,14 +3438,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AndroidJavaObject_t8FFB930F335C1178405B82AC2B
 		AndroidJavaObject_Set_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m1C70D480560CA0D0C171727EB7B1FF4C1F267F15(L_31, _stringLiteral21916927D1C2A23DD6DA3C2E7FE2F3D6317F563A, L_33, AndroidJavaObject_Set_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m1C70D480560CA0D0C171727EB7B1FF4C1F267F15_RuntimeMethod_var);
 		// witRuntimeConfig.Set("preferredActivationOffset",
 		//     configuration.preferredActivationOffset);
-		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_34 = L_31;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_34 = V_1;
 		WitRuntimeConfiguration_t74ABC500731591BA8D99A1C88E1821020551D3B3* L_35 = __this->___configuration_0;
 		NullCheck(L_35);
 		float L_36 = L_35->___preferredActivationOffset_12;
 		NullCheck(L_34);
 		AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5(L_34, _stringLiteral0B4C9B994D78DE3313E2AEE4DF0964592BF389FE, L_36, AndroidJavaObject_Set_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mBFF5C549692C48861BC5397B09E7CB34767F40B5_RuntimeMethod_var);
 		// return witRuntimeConfig;
-		return L_34;
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_37 = V_1;
+		V_2 = L_37;
+		goto IL_011d;
+	}
+
+IL_011d:
+	{
+		// }
+		AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0* L_38 = V_2;
+		return L_38;
 	}
 }
 #ifdef __clang__
@@ -3379,6 +3492,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl__ctor_m35A929C24F4C90801C14
 // System.Boolean Oculus.Voice.Bindings.Android.VoiceSDKImpl::get_PlatformSupportsWit()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool VoiceSDKImpl_get_PlatformSupportsWit_m372E01C4FEBDC063566D099A673EAFC2702A197E (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* __this, const RuntimeMethod* method) 
 {
+	int32_t G_B3_0 = 0;
 	{
 		// public bool PlatformSupportsWit => service.PlatformSupportsWit && _isServiceAvailable;
 		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_0 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
@@ -3387,22 +3501,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool VoiceSDKImpl_get_PlatformSupportsWit_m37
 		L_1 = VoiceSDKBinding_get_PlatformSupportsWit_m19DB6531CDA2434ADABE06C5310FA94A370C5F18(L_0, NULL);
 		if (!L_1)
 		{
-			goto IL_0014;
+			goto IL_0015;
 		}
 	}
 	{
 		bool L_2 = __this->____isServiceAvailable_3;
-		return L_2;
+		G_B3_0 = ((int32_t)(L_2));
+		goto IL_0016;
 	}
 
-IL_0014:
+IL_0015:
 	{
-		return (bool)0;
+		G_B3_0 = 0;
+	}
+
+IL_0016:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // System.Boolean Oculus.Voice.Bindings.Android.VoiceSDKImpl::get_Active()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool VoiceSDKImpl_get_Active_mD70FF7EB6F3FBB20F5FF3F4BAC05929AC7157A6D (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* __this, const RuntimeMethod* method) 
 {
+	int32_t G_B3_0 = 0;
 	{
 		// public bool Active => service.Active && _isActive;
 		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_0 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
@@ -3411,17 +3532,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool VoiceSDKImpl_get_Active_mD70FF7EB6F3FBB2
 		L_1 = VoiceSDKBinding_get_Active_mD3DC2E21C48504508A4BA471D90DF2A72601D172(L_0, NULL);
 		if (!L_1)
 		{
-			goto IL_0014;
+			goto IL_0015;
 		}
 	}
 	{
 		bool L_2 = __this->____isActive_6;
-		return L_2;
+		G_B3_0 = ((int32_t)(L_2));
+		goto IL_0016;
 	}
 
-IL_0014:
+IL_0015:
 	{
-		return (bool)0;
+		G_B3_0 = 0;
+	}
+
+IL_0016:
+	{
+		return (bool)G_B3_0;
 	}
 }
 // System.Boolean Oculus.Voice.Bindings.Android.VoiceSDKImpl::get_IsRequestActive()
@@ -3539,22 +3666,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_Connect_mC63D237A04DFDC311A
 		if (L_8)
 		{
 			G_B2_0 = _stringLiteral47DA4AFC29222C9791B731DF4DADD99DC88F94B0;
-			goto IL_0064;
+			goto IL_0069;
 		}
 	}
 	{
 		G_B3_0 = _stringLiteral9611837DC9F59CE850732A48008AE16B5242C6BE;
 		G_B3_1 = G_B1_0;
-		goto IL_0069;
+		goto IL_006e;
 	}
 
-IL_0064:
+IL_0069:
 	{
 		G_B3_0 = _stringLiteral734D834219E25F6AC949E3C4A33AA80BB578DC1A;
 		G_B3_1 = G_B2_0;
 	}
 
-IL_0069:
+IL_006e:
 	{
 		String_t* L_9;
 		L_9 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(G_B3_1, G_B3_0, NULL);
@@ -3575,32 +3702,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_Disconnect_mE3A608B8E60189B
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&VoiceSDKImpl_OnStoppedListening_mA1756BD9180B56077E95BCC85BCB126D14A6BFD2_RuntimeMethod_var);
 		s_Il2CppMethodInitialized = true;
 	}
+	bool V_0 = false;
 	{
 		// base.Disconnect();
 		BaseAndroidConnectionImpl_1_Disconnect_mA5F161E6B61246B5919266A3C4A151C31092189D(__this, BaseAndroidConnectionImpl_1_Disconnect_mA5F161E6B61246B5919266A3C4A151C31092189D_RuntimeMethod_var);
 		// if (null != eventBinding)
 		VoiceSDKListenerBinding_t30997F28BDBC1D5E0513252605FC518F84D42BB4* L_0 = __this->___eventBinding_7;
-		if (!L_0)
+		V_0 = (bool)((!(((RuntimeObject*)(VoiceSDKListenerBinding_t30997F28BDBC1D5E0513252605FC518F84D42BB4*)L_0) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_002f;
+			goto IL_0039;
 		}
 	}
 	{
 		// eventBinding.VoiceEvents.OnStoppedListening.RemoveListener(OnStoppedListening);
-		VoiceSDKListenerBinding_t30997F28BDBC1D5E0513252605FC518F84D42BB4* L_1 = __this->___eventBinding_7;
-		NullCheck(L_1);
-		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_2;
-		L_2 = VoiceSDKListenerBinding_get_VoiceEvents_m71FCB3CCE85DC611F18E05D1CB21FC8CD828B329(L_1, NULL);
+		VoiceSDKListenerBinding_t30997F28BDBC1D5E0513252605FC518F84D42BB4* L_2 = __this->___eventBinding_7;
 		NullCheck(L_2);
-		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_3 = L_2->___OnStoppedListening_8;
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_4 = (UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7*)il2cpp_codegen_object_new(UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		NullCheck(L_4);
-		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_4, __this, (intptr_t)((void*)VoiceSDKImpl_OnStoppedListening_mA1756BD9180B56077E95BCC85BCB126D14A6BFD2_RuntimeMethod_var), NULL);
+		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_3;
+		L_3 = VoiceSDKListenerBinding_get_VoiceEvents_m71FCB3CCE85DC611F18E05D1CB21FC8CD828B329(L_2, NULL);
 		NullCheck(L_3);
-		UnityEvent_RemoveListener_m0E138F5575CB4363019D3DA570E98FAD502B812C(L_3, L_4, NULL);
+		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_4 = L_3->___OnStoppedListening_8;
+		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_5 = (UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7*)il2cpp_codegen_object_new(UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
+		NullCheck(L_5);
+		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_5, __this, (intptr_t)((void*)VoiceSDKImpl_OnStoppedListening_mA1756BD9180B56077E95BCC85BCB126D14A6BFD2_RuntimeMethod_var), NULL);
+		NullCheck(L_4);
+		UnityEvent_RemoveListener_m0E138F5575CB4363019D3DA570E98FAD502B812C(L_4, L_5, NULL);
 	}
 
-IL_002f:
+IL_0039:
 	{
 		// }
 		return;
@@ -3646,27 +3776,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_Activate_m9798F3239FE38F698
 // System.Void Oculus.Voice.Bindings.Android.VoiceSDKImpl::Activate()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_Activate_m5B4850B2D285877E77FEE40F099226C951C418AB (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* __this, const RuntimeMethod* method) 
 {
+	bool V_0 = false;
 	{
 		// if (_isActive) return;
 		bool L_0 = __this->____isActive_6;
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0009;
+			goto IL_000d;
 		}
 	}
 	{
 		// if (_isActive) return;
-		return;
+		goto IL_0020;
 	}
 
-IL_0009:
+IL_000d:
 	{
 		// _isActive = true;
 		__this->____isActive_6 = (bool)1;
 		// service.Activate();
-		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_1 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
-		NullCheck(L_1);
-		VoiceSDKBinding_Activate_mA000DD248AF9DB80AB7E5A0132FB9C1ED16B07D6(L_1, NULL);
+		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_2 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
+		NullCheck(L_2);
+		VoiceSDKBinding_Activate_mA000DD248AF9DB80AB7E5A0132FB9C1ED16B07D6(L_2, NULL);
+	}
+
+IL_0020:
+	{
 		// }
 		return;
 	}
@@ -3674,28 +3811,35 @@ IL_0009:
 // System.Void Oculus.Voice.Bindings.Android.VoiceSDKImpl::Activate(Facebook.WitAi.Configuration.WitRequestOptions)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_Activate_m8EEEAD91E9D26043C3605EB27BF3FD4D404E374D (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* __this, WitRequestOptions_tDF3C29A7F96FE1E43F5143DB6C6E96869BD4AB49* ___requestOptions0, const RuntimeMethod* method) 
 {
+	bool V_0 = false;
 	{
 		// if (_isActive) return;
 		bool L_0 = __this->____isActive_6;
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0009;
+			goto IL_000d;
 		}
 	}
 	{
 		// if (_isActive) return;
-		return;
+		goto IL_0021;
 	}
 
-IL_0009:
+IL_000d:
 	{
 		// _isActive = true;
 		__this->____isActive_6 = (bool)1;
 		// service.Activate(requestOptions);
-		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_1 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
-		WitRequestOptions_tDF3C29A7F96FE1E43F5143DB6C6E96869BD4AB49* L_2 = ___requestOptions0;
-		NullCheck(L_1);
-		VoiceSDKBinding_Activate_m4683EC76B9A56D993E540774768B88FD8E79A84A(L_1, L_2, NULL);
+		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_2 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
+		WitRequestOptions_tDF3C29A7F96FE1E43F5143DB6C6E96869BD4AB49* L_3 = ___requestOptions0;
+		NullCheck(L_2);
+		VoiceSDKBinding_Activate_m4683EC76B9A56D993E540774768B88FD8E79A84A(L_2, L_3, NULL);
+	}
+
+IL_0021:
+	{
 		// }
 		return;
 	}
@@ -3703,27 +3847,34 @@ IL_0009:
 // System.Void Oculus.Voice.Bindings.Android.VoiceSDKImpl::ActivateImmediately()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_ActivateImmediately_m64D4DDF5573057E516D1D939511DFB5719F84A51 (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* __this, const RuntimeMethod* method) 
 {
+	bool V_0 = false;
 	{
 		// if (_isActive) return;
 		bool L_0 = __this->____isActive_6;
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0009;
+			goto IL_000d;
 		}
 	}
 	{
 		// if (_isActive) return;
-		return;
+		goto IL_0020;
 	}
 
-IL_0009:
+IL_000d:
 	{
 		// _isActive = true;
 		__this->____isActive_6 = (bool)1;
 		// service.ActivateImmediately();
-		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_1 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
-		NullCheck(L_1);
-		VoiceSDKBinding_ActivateImmediately_m80767C9BF3CEF14CA6CF9D8FF06092379DDF37B1(L_1, NULL);
+		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_2 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
+		NullCheck(L_2);
+		VoiceSDKBinding_ActivateImmediately_m80767C9BF3CEF14CA6CF9D8FF06092379DDF37B1(L_2, NULL);
+	}
+
+IL_0020:
+	{
 		// }
 		return;
 	}
@@ -3731,28 +3882,35 @@ IL_0009:
 // System.Void Oculus.Voice.Bindings.Android.VoiceSDKImpl::ActivateImmediately(Facebook.WitAi.Configuration.WitRequestOptions)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_ActivateImmediately_m33C638C6440CEFCBB28345FF1625C4BB6EEBFFA7 (VoiceSDKImpl_t1DBC3014F4C111EF0C536D8DA5C3E10639D0F40A* __this, WitRequestOptions_tDF3C29A7F96FE1E43F5143DB6C6E96869BD4AB49* ___requestOptions0, const RuntimeMethod* method) 
 {
+	bool V_0 = false;
 	{
 		// if (_isActive) return;
 		bool L_0 = __this->____isActive_6;
-		if (!L_0)
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_0009;
+			goto IL_000d;
 		}
 	}
 	{
 		// if (_isActive) return;
-		return;
+		goto IL_0021;
 	}
 
-IL_0009:
+IL_000d:
 	{
 		// _isActive = true;
 		__this->____isActive_6 = (bool)1;
 		// service.ActivateImmediately(requestOptions);
-		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_1 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
-		WitRequestOptions_tDF3C29A7F96FE1E43F5143DB6C6E96869BD4AB49* L_2 = ___requestOptions0;
-		NullCheck(L_1);
-		VoiceSDKBinding_ActivateImmediately_m473FE539750900CED4AC7999E13FD4FBFC67D90F(L_1, L_2, NULL);
+		VoiceSDKBinding_tA9F9337E1F9969F81CDA14A71BE69D5E9A48FCF1* L_2 = ((BaseAndroidConnectionImpl_1_tFA27FD159EEF37A733DA17D57174F130D689DFAF*)__this)->___service_1;
+		WitRequestOptions_tDF3C29A7F96FE1E43F5143DB6C6E96869BD4AB49* L_3 = ___requestOptions0;
+		NullCheck(L_2);
+		VoiceSDKBinding_ActivateImmediately_m473FE539750900CED4AC7999E13FD4FBFC67D90F(L_2, L_3, NULL);
+	}
+
+IL_0021:
+	{
 		// }
 		return;
 	}
@@ -3802,17 +3960,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKImpl_OnServiceNotAvailable_m238D
 		if (L_1)
 		{
 			G_B2_0 = L_1;
-			goto IL_0019;
+			goto IL_001b;
 		}
 	}
 	{
-		return;
+		goto IL_0021;
 	}
 
-IL_0019:
+IL_001b:
 	{
 		NullCheck(G_B2_0);
 		Action_Invoke_m7126A54DACA72B845424072887B5F3A51FC3808E_inline(G_B2_0, NULL);
+	}
+
+IL_0021:
+	{
 		// }
 		return;
 	}
@@ -3945,14 +4107,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onResponse_mCD95
 		if (L_6)
 		{
 			G_B2_0 = L_6;
-			goto IL_0024;
+			goto IL_0025;
 		}
 	}
 	{
-		goto IL_002f;
+		goto IL_0031;
 	}
 
-IL_0024:
+IL_0025:
 	{
 		WitResponseNode_tACC149B056FE33C54D55A5EAB653A77902617DBB* L_7 = V_1;
 		String_t* L_8;
@@ -3961,7 +4123,7 @@ IL_0024:
 		UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15(G_B2_0, L_8, UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15_RuntimeMethod_var);
 	}
 
-IL_002f:
+IL_0031:
 	{
 		// VoiceEvents.OnResponse?.Invoke(responseNode);
 		VoiceEvents_tB9CCDD1C68F3A784600E7932935F705B17B8F1F5* L_9;
@@ -3973,18 +4135,22 @@ IL_002f:
 		if (L_11)
 		{
 			G_B5_0 = L_11;
-			goto IL_003f;
+			goto IL_0042;
 		}
 	}
 	{
-		return;
+		goto IL_0049;
 	}
 
-IL_003f:
+IL_0042:
 	{
 		WitResponseNode_tACC149B056FE33C54D55A5EAB653A77902617DBB* L_12 = V_0;
 		NullCheck(G_B5_0);
 		UnityEvent_1_Invoke_m3EFA705FA21918CEB5E6451B5CD2092894C5655F(G_B5_0, L_12, UnityEvent_1_Invoke_m3EFA705FA21918CEB5E6451B5CD2092894C5655F_RuntimeMethod_var);
+	}
+
+IL_0049:
+	{
 		// }
 		return;
 	}
@@ -4018,14 +4184,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onPartialRespons
 		if (L_4)
 		{
 			G_B2_0 = L_4;
-			goto IL_0017;
+			goto IL_0019;
 		}
 	}
 	{
-		return;
+		goto IL_002f;
 	}
 
-IL_0017:
+IL_0019:
 	{
 		WitResponseNode_tACC149B056FE33C54D55A5EAB653A77902617DBB* L_5 = V_0;
 		NullCheck(L_5);
@@ -4035,6 +4201,10 @@ IL_0017:
 		L_7 = WitResponseNode_op_Implicit_m143C3C59FB868D3352C8B2A15B059A1A1DC6AE87(L_6, NULL);
 		NullCheck(G_B2_0);
 		UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15(G_B2_0, L_7, UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15_RuntimeMethod_var);
+	}
+
+IL_002f:
+	{
 		// }
 		return;
 	}
@@ -4061,19 +4231,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onError_m4F8174D
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_001a;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		String_t* L_3 = ___error0;
 		String_t* L_4 = ___message1;
 		NullCheck(G_B2_0);
 		UnityEvent_2_Invoke_m40308708481154EFE4E59A5787D5CB02DC8B5645(G_B2_0, L_3, L_4, UnityEvent_2_Invoke_m40308708481154EFE4E59A5787D5CB02DC8B5645_RuntimeMethod_var);
+	}
+
+IL_001a:
+	{
 		// }
 		return;
 	}
@@ -4094,17 +4268,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onAborted_mABAEE
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B2_0, NULL);
+	}
+
+IL_0018:
+	{
 		// }
 		return;
 	}
@@ -4125,17 +4303,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onRequestComplet
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B2_0, NULL);
+	}
+
+IL_0018:
+	{
 		// }
 		return;
 	}
@@ -4162,18 +4344,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onMicLevelChange
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0019;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		float L_3 = ___level0;
 		NullCheck(G_B2_0);
 		UnityEvent_1_Invoke_mABC41DCEDDFA68F8F39C0DFC1CF55B7C1B70A805(G_B2_0, L_3, UnityEvent_1_Invoke_mABC41DCEDDFA68F8F39C0DFC1CF55B7C1B70A805_RuntimeMethod_var);
+	}
+
+IL_0019:
+	{
 		// }
 		return;
 	}
@@ -4200,17 +4386,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onRequestCreated
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0019;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_1_Invoke_mF0C82AA7629611920EF105131F8849B61974E9EA(G_B2_0, (WitRequest_t9EBE9541762EBC83F63DE8E549A47CD273F212A6*)NULL, UnityEvent_1_Invoke_mF0C82AA7629611920EF105131F8849B61974E9EA_RuntimeMethod_var);
+	}
+
+IL_0019:
+	{
 		// }
 		return;
 	}
@@ -4231,17 +4421,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onStartListening
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B2_0, NULL);
+	}
+
+IL_0018:
+	{
 		// }
 		return;
 	}
@@ -4262,17 +4456,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onStoppedListeni
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B2_0, NULL);
+	}
+
+IL_0018:
+	{
 		// }
 		return;
 	}
@@ -4293,17 +4491,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onMicDataSent_m2
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B2_0, NULL);
+	}
+
+IL_0018:
+	{
 		// }
 		return;
 	}
@@ -4324,17 +4526,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onMinimumWakeThr
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0018;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		NullCheck(G_B2_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B2_0, NULL);
+	}
+
+IL_0018:
+	{
 		// }
 		return;
 	}
@@ -4362,18 +4568,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onPartialTranscr
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0019;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		String_t* L_3 = ___transcription0;
 		NullCheck(G_B2_0);
 		UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15(G_B2_0, L_3, UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15_RuntimeMethod_var);
+	}
+
+IL_0019:
+	{
 		// }
 		return;
 	}
@@ -4401,18 +4611,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VoiceSDKListenerBinding_onFullTranscript
 		if (L_2)
 		{
 			G_B2_0 = L_2;
-			goto IL_0010;
+			goto IL_0012;
 		}
 	}
 	{
-		return;
+		goto IL_0019;
 	}
 
-IL_0010:
+IL_0012:
 	{
 		String_t* L_3 = ___transcription0;
 		NullCheck(G_B2_0);
 		UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15(G_B2_0, L_3, UnityEvent_1_Invoke_mA633B48B5D287DA856FB954AC3E4012487E63C15_RuntimeMethod_var);
+	}
+
+IL_0019:
+	{
 		// }
 		return;
 	}

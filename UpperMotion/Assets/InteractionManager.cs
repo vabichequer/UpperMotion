@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using TMPro;
 
-public class LineDrawer : MonoBehaviour
+public class InteractionManager : MonoBehaviour
 {
     public LineRenderer LineRendererObject;
     public enum Orientation {Left, Right};
+    public Material teachMaterial, performMaterial;
     public Orientation orientation;
-    public GameObject WandPoint;
-    public string FilePath;
-    public GameObject display;
+    public GameObject WandPoint, display;
+    public string currentInteraction;
     public string[] interactions;    
     bool primaryButton, secondaryButton, incremented = false;
     public float trigger, grip;
@@ -42,17 +41,18 @@ public class LineDrawer : MonoBehaviour
         }
         else
         {
-            primaryButton = Input.GetButton("XRI_Right_PrimaryButton");  
-            secondaryButton = Input.GetButton("XRI_Right_SecondaryButton"); 
+            primaryButton = Input.GetButton("XRI_Right_PrimaryButton");   
+            secondaryButton = Input.GetButton("XRI_Right_SecondaryButton");
             trigger = Input.GetAxis("XRI_Right_Trigger");
             grip = Input.GetAxis("XRI_Right_Grip");
         }
     }
 
-    void updateLRO(int size, Vector3 pos)
+    void updateLRO(int size, Vector3 pos, Material mat)
     {
         LineRendererObject.positionCount = size;
         LineRendererObject.SetPosition(size - 1, pos);
+        LineRendererObject.material = mat;
     }
 
     // Update is called once per frame
@@ -60,17 +60,22 @@ public class LineDrawer : MonoBehaviour
     {   
         getButtons();  
 
-        if (primaryButton)
-            updateLRO(LineRendererObject.positionCount + 1, WandPoint.transform.position);
-        else        
-            updateLRO(1, WandPoint.transform.position);
+        if (primaryButton)     
+            updateLRO(LineRendererObject.positionCount + 1, WandPoint.transform.position, performMaterial);
+        else
+        {
+            if (secondaryButton)          
+                updateLRO(LineRendererObject.positionCount + 1, WandPoint.transform.position, teachMaterial);
+            else
+                updateLRO(1, WandPoint.transform.position, performMaterial);
+        }
+
 
         if (interactions.Length > 0)
         {
             if (grip > 0.9)
             {
                 display.SetActive(true);
-                display.GetComponent<TextMeshPro>().text = interactions[idx];
 
                 if (trigger > 0.99 && !incremented)
                 {                
@@ -79,7 +84,6 @@ public class LineDrawer : MonoBehaviour
                     else 
                         idx = 0;
                         
-                    display.GetComponent<TextMeshPro>().text = interactions[idx];
                     incremented = true;
                 }
                 else
@@ -87,34 +91,16 @@ public class LineDrawer : MonoBehaviour
                     if (trigger < 0.99)
                         incremented = false;
                 }
+                
+                display.GetComponent<TextMeshPro>().text = interactions[idx];
             }
             else
             {
                 display.SetActive(false);
                 incremented = false;
             }
+            
+            currentInteraction = interactions[idx];
         }
-    }
-
-    void OnApplicationQuit()
-    { 
-        /*
-        StreamWriter writer = new StreamWriter(FilePath);
- 
-        writer.WriteLine("Inventory,OnlyX");
- 
-        
-        for (int i = 0; i < inventory.Count; ++i)
-        {
- 
-            writer.WriteLine(inventory[i]);
- 
-        }
-        for (int j = 0; j < OnlyX.Count; ++j)
-        {
- 
-            writer.WriteLine("," + OnlyX[j]);
-        }
-        */
     }
 }
