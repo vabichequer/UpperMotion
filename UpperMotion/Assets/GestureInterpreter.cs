@@ -41,11 +41,10 @@ public class GestureInterpreter : MonoBehaviour
 
     void restartArrays()
     {        
-        lastGesture = new List<Vector3>();
         positions = new List<Point>();
         strokeID = -1;
         interactionType = -1;
-        OnGesturePerformance.Invoke();
+        OnGesturePerformance();
     }
 
     void recordPositions()
@@ -95,6 +94,7 @@ public class GestureInterpreter : MonoBehaviour
         {
             if (primaryButton)
             {
+                lastGesture = new List<Vector3>();
                 recordPositions();
                 interactionType = 0;
                 strokeID++;
@@ -102,6 +102,7 @@ public class GestureInterpreter : MonoBehaviour
 
             if (secondaryButton)
             {
+                lastGesture = new List<Vector3>();                
                 recordPositions();
                 interactionType = 1;
                 strokeID++;

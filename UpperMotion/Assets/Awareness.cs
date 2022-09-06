@@ -95,7 +95,7 @@ public class Awareness : MonoBehaviour
     {        
         if (reply)
         {
-            if (accTime > 1.0f/30.0f)
+            if (accTime > 1.0f/60.0f)
             {
                 accTime = 0;                
                 idx++;
@@ -104,9 +104,15 @@ public class Awareness : MonoBehaviour
             else
             {
                 if (idx < lastGesture.Count)
+                {
+                    Debug.Log("Last gesture: " + lastGesture.Count + "| idx: " + idx);
                     accTime += Time.deltaTime;
+                }
                 else
+                {
+                    Debug.Log("FINISH | Last gesture: " + lastGesture.Count);
                     reset();
+                }
             }
         }
     }
