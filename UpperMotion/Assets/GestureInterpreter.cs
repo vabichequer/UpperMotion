@@ -14,14 +14,18 @@ public class GestureInterpreter : MonoBehaviour
 {    
     public GameObject Controller;
     public InteractionManager IM;
+    public Communication CM;
     public enum Orientation {Left, Right};
     public Orientation orientation;
+    public string recordingsFolder = "";
+    public List<Vector3> lastGesture = new List<Vector3>();
+    public delegate void OnGesturePerformanceDelegate();
+    public event OnGesturePerformanceDelegate OnGesturePerformance;
 	private List<Gesture> trainingSet = new List<Gesture>();
     private bool primaryButton, secondaryButton;
     private List<Point> positions = new List<Point>();
-    private string currentInteraction, primaryButtonId, secondaryButtonId, message;
-    private int strokeID = -1, interaction = -1;
-    private TouchScreenKeyboard overlayKeyboard;
+    private string message;
+    private int strokeID = -1, interactionType = -1;
     void Start()
     {
         //Load pre-made gestures
@@ -30,31 +34,24 @@ public class GestureInterpreter : MonoBehaviour
 			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
 
 		//Load user custom gestures
-		string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
+		string[] filePaths = Directory.GetFiles(recordingsFolder, "*.xml");
 		foreach (string filePath in filePaths)
 			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
-
-        if (orientation == Orientation.Right)
-        {
-            primaryButtonId = "XRI_Right_PrimaryButton";
-            secondaryButtonId = "XRI_Right_SecondaryButton";
-        }
-        else
-        {
-            primaryButtonId = "XRI_Left_PrimaryButton";
-            secondaryButtonId = "XRI_Left_SecondaryButton";
-        }
     }
 
     void restartArrays()
     {        
+        lastGesture = new List<Vector3>();
         positions = new List<Point>();
         strokeID = -1;
+        interactionType = -1;
+        OnGesturePerformance.Invoke();
     }
 
     void recordPositions()
     {
         Vector3 pos = Controller.transform.position;
+        lastGesture.Add(pos);
         positions.Add(new Point(pos.x, pos.y, strokeID));
    }
 
@@ -68,40 +65,51 @@ public class GestureInterpreter : MonoBehaviour
 
     void addGesture()
     {          
-        string fileName = String.Format("{0}/{1}-{2}.xml", Application.persistentDataPath, IM.currentInteraction, DateTime.Now.ToFileTime());
-
-        Debug.Log("The path is: " + fileName);
+        string fileName = String.Format("{0}/{1}-{2}.xml", recordingsFolder, IM.currentInteraction, DateTime.Now.ToFileTime());
 
         GestureIO.WriteGesture(positions.ToArray(), IM.currentInteraction, fileName);
 
         trainingSet.Add(new Gesture(positions.ToArray(), IM.currentInteraction));
     }
     
+    void getButtons()
+    {
+        if (orientation == Orientation.Left)
+        {
+            primaryButton = Input.GetButton("XRI_Left_PrimaryButton");
+            secondaryButton = Input.GetButton("XRI_Left_SecondaryButton");
+        }
+        else
+        {
+            primaryButton = Input.GetButton("XRI_Right_PrimaryButton");   
+            secondaryButton = Input.GetButton("XRI_Right_SecondaryButton");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        primaryButton = Input.GetButton(primaryButtonId);
-        secondaryButton = Input.GetButton(secondaryButtonId);
+        getButtons();
 
-        if (interaction == -1)
+        if (interactionType == -1)
         {
             if (primaryButton)
             {
                 recordPositions();
-                interaction = 0;
+                interactionType = 0;
                 strokeID++;
             }
 
             if (secondaryButton)
             {
                 recordPositions();
-                interaction = 1;
+                interactionType = 1;
                 strokeID++;
             }
         }
         else
         {   
-            switch(interaction)
+            switch(interactionType)
             {
                 case -1:
                     break;
@@ -110,9 +118,8 @@ public class GestureInterpreter : MonoBehaviour
                     if(!primaryButton)
                     {                    
                         Identify();
-                        Debug.Log(message);
+                        CM.sendMessage(message);
                         restartArrays();
-                        interaction = -1;
                     }
                     else                 
                         recordPositions();
@@ -120,15 +127,13 @@ public class GestureInterpreter : MonoBehaviour
                 case 1:                
                     if(!secondaryButton)
                     {   
-                        Debug.Log("Case 1");
                         addGesture();
+                        CM.sendMessage(IM.currentInteraction + " example added.");
                         restartArrays();
-                        interaction = -1;
                     }
                     else
                     {
                         recordPositions();
-                        Debug.Log("Case -1");
                     }
                     break;
 

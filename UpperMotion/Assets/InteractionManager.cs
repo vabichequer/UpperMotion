@@ -10,11 +10,11 @@ public class InteractionManager : MonoBehaviour
     public Material teachMaterial, performMaterial;
     public Orientation orientation;
     public GameObject WandPoint, display;
+    public string[] interactions;
     public string currentInteraction;
-    public string[] interactions;    
-    bool primaryButton, secondaryButton, incremented = false;
     public float trigger, grip;
     int idx = 0;
+    bool primaryButton, secondaryButton, incremented = false;
 
     void Start()
     {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 public class recordGestures : MonoBehaviour
